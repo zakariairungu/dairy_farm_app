@@ -14,6 +14,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: FTheme.lightTheme,
+      darkTheme: FTheme.darkTheme,
+      themeMode: ThemeMode.system,
       home: const SplashScreen(),
     );
   }

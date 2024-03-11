@@ -5,10 +5,38 @@ import 'package:google_fonts/google_fonts.dart';
 class FTextTheme {
   FTextTheme._();
   static TextTheme lightTheme = TextTheme(
-    headlineMedium: GoogleFonts.roboto(
-           fontWeight: FontWeight.bold, color: blackColor,
+    headlineLarge: GoogleFonts.inter(
+      fontWeight: FontWeight.bold,
+      color: blackColor,
     ),
-    titleLarge: GoogleFonts.roboto(color: blackColor),
+    headlineSmall: GoogleFonts.roboto(
+      fontWeight: FontWeight.bold,
+      color: blackColor,
+    ),
+    titleLarge: GoogleFonts.roboto(
+      color: blackColor,
+    ),
+    titleSmall: GoogleFonts.roboto(
+      fontWeight: FontWeight.bold,
+      color: blackColor,
+    ),
   );
-  static TextTheme darkTheme = TextTheme();
+  static TextTheme darkTheme = TextTheme(
+    headlineLarge: GoogleFonts.inter(
+      fontWeight: FontWeight.bold,
+      color: whiteColor,
+    ),
+    headlineSmall: GoogleFonts.roboto(
+      fontWeight: FontWeight.bold,
+      color: whiteColor,
+    ),
+    titleLarge: GoogleFonts.roboto(
+      color: whiteColor,
+    ),
+    titleSmall: GoogleFonts.roboto(
+      fontWeight: FontWeight.bold,
+      color: whiteColor,
+      
+    ),
+  );
 }

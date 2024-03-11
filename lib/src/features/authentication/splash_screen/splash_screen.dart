@@ -1,12 +1,10 @@
-import 'dart:ui';
-
 import 'package:dairy_farm_app/src/constants/colors.dart';
 import 'package:dairy_farm_app/src/constants/images.dart';
-import 'package:dairy_farm_app/src/constants/size.dart';
 import 'package:dairy_farm_app/src/constants/text.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:dairy_farm_app/src/features/authentication/login/login.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/state_manager.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -14,18 +12,19 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDark =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(20),
-        color: primaryColor,
+        color: isDark ? Colors.grey : primaryColor,
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               flex: 1,
-              child: Container(
-                  child: Align(
+              child: Align(
                 alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -39,18 +38,18 @@ class SplashScreen extends StatelessWidget {
                     const SizedBox(height: 10),
                     Text(
                       fSubTitle,
-                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        foreground: Paint()
-                          ..style = PaintingStyle.stroke
-                          ..strokeWidth = 1
-                          ..color = Colors.black,
-                      ),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                foreground: Paint()
+                                  ..style = PaintingStyle.stroke
+                                  ..strokeWidth = 1
+                                  ..color = isDark ? whiteColor : Colors.black,
+                              ),
                       textAlign: TextAlign.center,
                     ),
-
                   ],
                 ),
-              )),
+              ),
             ),
             Expanded(
               flex: 3,
@@ -63,33 +62,37 @@ class SplashScreen extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color.fromARGB(255, 30, 255, 1),
-                        Color.fromARGB(255, 101, 202, 172)
-                      ],
-                    ),
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color.fromARGB(255, 46, 54, 45),
+                              Color.fromARGB(255, 16, 17, 17)
+                            ],
+                          )
+                        : const LinearGradient(
+                            colors: [
+                              Color.fromARGB(255, 30, 255, 1),
+                              Color.fromARGB(255, 101, 202, 172)
+                            ],
+                          ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5), // Shadow color
-                        spreadRadius: 5, // Spread radius
-                        blurRadius: 10, // Blur radius
-                        offset: const Offset(0, 3), // Offset
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 10,
+                        offset: const Offset(0, 3),
                       ),
                     ],
                     borderRadius: BorderRadius.circular(10)),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const Text(
-                      fGetStartedTitle,
-                      style: TextStyle(fontSize: 20),
-                    ),
+                    Text(fGetStartedTitle,
+                        style: Theme.of(context).textTheme.titleLarge),
                     ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          foregroundColor: Colors.white),
+                      onPressed: () {
+                        Get.offAll(const Login());
+                      },
                       child: const Text(fGetStarted),
                     ),
                   ],
