@@ -43,7 +43,7 @@ class SplashScreen extends StatelessWidget {
                                 foreground: Paint()
                                   ..style = PaintingStyle.stroke
                                   ..strokeWidth = 1
-                                  ..color = isDark ? whiteColor : Colors.black,
+                                  ..color = isDark ? primaryColor : Colors.black,
                               ),
                       textAlign: TextAlign.center,
                     ),
@@ -65,8 +65,8 @@ class SplashScreen extends StatelessWidget {
                     gradient: isDark
                         ? const LinearGradient(
                             colors: [
-                              Color.fromARGB(255, 46, 54, 45),
-                              Color.fromARGB(255, 16, 17, 17)
+                              Color.fromARGB(255, 81, 95, 18),
+                              Color.fromARGB(255, 223, 235, 59)
                             ],
                           )
                         : const LinearGradient(
@@ -88,7 +88,7 @@ class SplashScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(fGetStartedTitle,
-                        style: Theme.of(context).textTheme.titleLarge),
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(color: isDark?primaryColor:whiteColor)),
                     ElevatedButton(
                       onPressed: () {
                         Get.offAll(const Login());

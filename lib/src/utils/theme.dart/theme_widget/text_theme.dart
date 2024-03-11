@@ -10,7 +10,6 @@ class FTextTheme {
       color: blackColor,
     ),
     headlineSmall: GoogleFonts.roboto(
-      fontWeight: FontWeight.bold,
       color: blackColor,
     ),
     titleLarge: GoogleFonts.roboto(
@@ -24,18 +23,16 @@ class FTextTheme {
   static TextTheme darkTheme = TextTheme(
     headlineLarge: GoogleFonts.inter(
       fontWeight: FontWeight.bold,
-      color: whiteColor,
+      color: primaryColor,
     ),
     headlineSmall: GoogleFonts.roboto(
-      fontWeight: FontWeight.bold,
-      color: whiteColor,
+      color: primaryColor,
     ),
     titleLarge: GoogleFonts.roboto(
-      color: whiteColor,
+      color: primaryColor,
     ),
     titleSmall: GoogleFonts.roboto(
-      fontWeight: FontWeight.bold,
-      color: whiteColor,
+      color: primaryColor,
       
     ),
   );
