@@ -1,7 +1,9 @@
 import 'dart:ui';
 
+import 'package:dairy_farm_app/src/constants/colors.dart';
 import 'package:dairy_farm_app/src/constants/images.dart';
 import 'package:dairy_farm_app/src/constants/size.dart';
+import 'package:dairy_farm_app/src/constants/text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -15,7 +17,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(20),
-        color: Colors.yellow,
+        color: primaryColor,
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,47 +25,43 @@ class SplashScreen extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Container(
-                  child: const Align(
+                  child: Align(
                 alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'My Cows Wallet',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                      fTitle,
+                      style: Theme.of(context).textTheme.headlineLarge,
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(
-                      'Let\'s keep records',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
+                      fSubTitle,
+                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        foreground: Paint()
+                          ..style = PaintingStyle.stroke
+                          ..strokeWidth = 1
+                          ..color = Colors.black,
                       ),
                       textAlign: TextAlign.center,
                     ),
+
                   ],
                 ),
               )),
             ),
             Expanded(
               flex: 3,
-              child: Container(
-                width: double.infinity,
-                child: Lottie.asset(
-                  lottieSplash,
-                ),
+              child: Lottie.asset(
+                lottieSplash,
               ),
             ),
             Expanded(
               flex: 1,
               child: Container(
-                width: MediaQuery.of(context).size.width * 1.5,
+                width: double.infinity,
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
@@ -76,7 +74,7 @@ class SplashScreen extends StatelessWidget {
                         color: Colors.grey.withOpacity(0.5), // Shadow color
                         spreadRadius: 5, // Spread radius
                         blurRadius: 10, // Blur radius
-                        offset: Offset(0, 3), // Offset
+                        offset: const Offset(0, 3), // Offset
                       ),
                     ],
                     borderRadius: BorderRadius.circular(10)),
@@ -84,16 +82,15 @@ class SplashScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     const Text(
-                      "Lets Bring Records to Digital",
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      fGetStartedTitle,
+                      style: TextStyle(fontSize: 20),
                     ),
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           foregroundColor: Colors.white),
-                      child: const Text("Get Started"),
+                      child: const Text(fGetStarted),
                     ),
                   ],
                 ),
