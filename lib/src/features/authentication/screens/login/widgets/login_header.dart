@@ -1,7 +1,7 @@
 import 'package:dairy_farm_app/src/constants/text.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../constants/colors.dart';
+import '../../../../../constants/colors.dart';
 
 class LoginHeader extends StatelessWidget {
   const LoginHeader({

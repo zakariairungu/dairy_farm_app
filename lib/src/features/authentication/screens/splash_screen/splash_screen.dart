@@ -1,7 +1,7 @@
 import 'package:dairy_farm_app/src/constants/colors.dart';
 import 'package:dairy_farm_app/src/constants/images.dart';
 import 'package:dairy_farm_app/src/constants/text.dart';
-import 'package:dairy_farm_app/src/features/authentication/login/login.dart';
+import 'package:dairy_farm_app/src/features/authentication/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/state_manager.dart';

@@ -1,10 +1,10 @@
 import 'package:dairy_farm_app/src/constants/text.dart';
 import 'package:dairy_farm_app/src/features/authentication/controllers/login_controller.dart';
-import 'package:dairy_farm_app/src/features/authentication/forgot_password/forgot_password.dart';
+import 'package:dairy_farm_app/src/features/authentication/screens/forgot_password/forgot_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../constants/colors.dart';
+import '../../../../../constants/colors.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
