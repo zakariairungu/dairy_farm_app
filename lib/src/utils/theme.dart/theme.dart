@@ -1,4 +1,5 @@
 import 'package:dairy_farm_app/src/constants/colors.dart';
+import 'package:dairy_farm_app/src/utils/theme.dart/theme_widget/bottom_nav_theme.dart';
 import 'package:dairy_farm_app/src/utils/theme.dart/theme_widget/elevated_button_theme.dart';
 import 'package:dairy_farm_app/src/utils/theme.dart/theme_widget/input_decoration_data_theme.dart';
 import 'package:dairy_farm_app/src/utils/theme.dart/theme_widget/text_theme.dart';
@@ -12,8 +13,9 @@ class FTheme {
     elevatedButtonTheme: FElevatedButtonTheme.lightTheme,
     inputDecorationTheme: FInputDecorationDataTheme.lightTheme,
     textSelectionTheme: TextSelectionThemeData(
-    cursorColor: blackColor, 
-  ),
+      cursorColor: blackColor,
+    ),
+    bottomNavigationBarTheme: FBottomNavigationBarTheme.lightTheme
   );
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
@@ -21,7 +23,8 @@ class FTheme {
     elevatedButtonTheme: FElevatedButtonTheme.darkTheme,
     inputDecorationTheme: FInputDecorationDataTheme.darkTheme,
     textSelectionTheme: TextSelectionThemeData(
-    cursorColor: primaryColor,
-  ),
+      cursorColor: primaryColor,
+    ),
+    bottomNavigationBarTheme: FBottomNavigationBarTheme.darkTheme
   );
 }
