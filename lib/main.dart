@@ -1,4 +1,4 @@
-import 'package:dairy_farm_app/src/features/authentication/screens/splash_screen/splash_screen.dart';
+
 import 'package:dairy_farm_app/src/features/dashboard/screens/dashboard.dart';
 import 'package:dairy_farm_app/src/utils/theme.dart/theme.dart';
 import 'package:flutter/material.dart';
