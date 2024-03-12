@@ -1,0 +1,1 @@
+dairy_cow_app records every data for future reference

@@ -14,7 +14,7 @@ class FElevatedButtonTheme {
   static ElevatedButtonThemeData darkTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: blackColor,
-      foregroundColor: whiteColor,
+      foregroundColor: primaryColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       side: const BorderSide(width: 2),
       )

@@ -1,4 +1,4 @@
-import 'package:dairy_farm_app/src/features/authentication/splash_screen/splash_screen.dart';
+import 'package:dairy_farm_app/src/features/dashboard/screens/dashboard.dart';
 import 'package:dairy_farm_app/src/utils/theme.dart/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,11 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: FTheme.lightTheme,
-      darkTheme: FTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      home: const SplashScreen(),
-    );
+        defaultTransition: Transition.leftToRightWithFade,
+        transitionDuration: const Duration(milliseconds: 500),
+        debugShowCheckedModeBanner: false,
+        theme: FTheme.lightTheme,
+        darkTheme: FTheme.darkTheme,
+        themeMode: ThemeMode.system,
+        home: const Dashboard());
   }
 }
