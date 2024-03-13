@@ -43,6 +43,7 @@ dependencies:
   get: ^4.6.6
 
   line_icons: ^2.0.3
+  flutter_speed_dial: ^7.0.0
 
 dev_dependencies:
   flutter_test:

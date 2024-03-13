@@ -1,10 +1,11 @@
 import 'package:dairy_farm_app/src/constants/colors.dart';
+import 'package:dairy_farm_app/src/constants/size.dart';
 import 'package:dairy_farm_app/src/constants/text.dart';
 import 'package:dairy_farm_app/src/features/dashboard/controllers/dashboard_controller.dart';
 import 'package:dairy_farm_app/src/features/dashboard/dialog/setting_dialog.dart';
 import 'package:dairy_farm_app/src/features/dashboard/screens/home/home.dart';
-import 'package:dairy_farm_app/src/features/dashboard/screens/profile/profile.dart';
 import 'package:dairy_farm_app/src/features/dashboard/screens/records/records.dart';
+import 'package:dairy_farm_app/src/features/dashboard/screens/wallet/wallet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,7 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> pages = [const Home(), const Records(), const Profile()];
+    final List<Widget> pages = [const Home(), const Records(), const Wallet()];
 
     final controller = Get.put(DashboardController());
     final bool isDark =
@@ -43,7 +44,7 @@ class Dashboard extends StatelessWidget {
           ),
         ],
       ),
-      body: Obx(() => pages[controller.selectedIndex.value]),
+      body: Container(padding: const EdgeInsets.symmetric(horizontal: fDefaultPadding,vertical: 10),width: double.infinity, child: Obx(() => pages[controller.selectedIndex.value])),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Obx(
