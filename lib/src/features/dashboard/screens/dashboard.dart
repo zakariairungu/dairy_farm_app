@@ -22,10 +22,7 @@ class Dashboard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: isDark ? blackColor : primaryColor,
-        title: Text(
-          "Welcome zack",
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
+        leading: const Icon(Icons.animation),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -44,7 +41,9 @@ class Dashboard extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(padding: const EdgeInsets.symmetric(horizontal: fDefaultPadding,vertical: 10),width: double.infinity, child: Obx(() => pages[controller.selectedIndex.value])),
+      body: Container(
+        
+        padding: const EdgeInsets.symmetric(horizontal: fDefaultPadding,vertical: 10),width: double.infinity, child: Obx(() => pages[controller.selectedIndex.value])),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Obx(
