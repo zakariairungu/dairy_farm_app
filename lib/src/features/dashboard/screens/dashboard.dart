@@ -22,18 +22,15 @@ class Dashboard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: isDark ? blackColor : primaryColor,
-        title: Text(
-          "Welcome zack",
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
+        leading: const Icon(Icons.animation),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                   color: primaryColor,
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(width: 2, color: blackColor)),
+                  shape: BoxShape.circle,
+                  border: Border.all(width: 1, color: blackColor)),
               child: IconButton(
                 onPressed: () {
                   setting(context, isDark);
@@ -44,7 +41,9 @@ class Dashboard extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(padding: const EdgeInsets.symmetric(horizontal: fDefaultPadding,vertical: 10),width: double.infinity, child: Obx(() => pages[controller.selectedIndex.value])),
+      body: Container(
+        
+        padding: const EdgeInsets.symmetric(horizontal: fDefaultPadding,vertical: 10),width: double.infinity, child: Obx(() => pages[controller.selectedIndex.value])),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Obx(
@@ -53,6 +52,7 @@ class Dashboard extends StatelessWidget {
             decoration: BoxDecoration(
               color: isDark ? blackColor : primaryColor,
               borderRadius: BorderRadius.circular(20),
+              border: Border.all(width: 1)
             ),
             child: BottomNavigationBar(
                 type: BottomNavigationBarType.fixed,
