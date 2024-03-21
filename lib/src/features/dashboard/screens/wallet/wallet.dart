@@ -1,7 +1,5 @@
 import 'package:dairy_farm_app/src/constants/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Wallet extends StatelessWidget {
   const Wallet({super.key});

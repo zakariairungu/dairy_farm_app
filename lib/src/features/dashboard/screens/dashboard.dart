@@ -8,6 +8,8 @@ import 'package:dairy_farm_app/src/features/dashboard/screens/records/records.da
 import 'package:dairy_farm_app/src/features/dashboard/screens/wallet/wallet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:line_icons/line_icons.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -20,15 +22,14 @@ class Dashboard extends StatelessWidget {
     final bool isDark =
         MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
+      
       appBar: AppBar(
-        backgroundColor: isDark ? blackColor : primaryColor,
-        leading: const Icon(Icons.animation),
+        leading: Image.asset("assets/png/icon.png"),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
-                  color: primaryColor,
                   shape: BoxShape.circle,
                   border: Border.all(width: 1, color: blackColor)),
               child: IconButton(
@@ -42,36 +43,41 @@ class Dashboard extends StatelessWidget {
         ],
       ),
       body: Container(
-        
-        padding: const EdgeInsets.symmetric(horizontal: fDefaultPadding,vertical: 10),width: double.infinity, child: Obx(() => pages[controller.selectedIndex.value])),
+          padding: const EdgeInsets.symmetric(
+              horizontal: 16, vertical: 8),
+          width: double.infinity,
+          child: Obx(() => pages[controller.selectedIndex.value])),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Obx(
           () => Container(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: isDark ? blackColor : primaryColor,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(width: 1)
+              color: blackColor,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(width: 1)),
+            child: GNav(
+              padding: const EdgeInsets.all(15),
+              selectedIndex: controller.selectedIndex.value,
+              gap: 8,
+              onTabChange: controller.isTaped,
+              color: whiteColor,
+              tabBackgroundColor: whiteColor,
+              tabs: const [
+                GButton(
+                  icon: LineIcons.cowboyHat,
+                  text: fHome,
+                ),
+                GButton(
+                  icon: Icons.book,
+                  text: fRecords,
+                ),
+                GButton(
+                  icon: Icons.wallet,
+                  text: fWallet,
+                ),
+              ],
             ),
-            child: BottomNavigationBar(
-                type: BottomNavigationBarType.fixed,
-                currentIndex: controller.selectedIndex.value,
-                onTap: controller.isTaped,
-                items: const [
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home_filled),
-                    label: fHome,
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.book),
-                    label: fRecords,
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.wallet),
-                    label: fWallet,
-                  ),
-                ]),
           ),
         ),
       ),
