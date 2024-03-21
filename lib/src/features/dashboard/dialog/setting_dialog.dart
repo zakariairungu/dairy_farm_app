@@ -1,6 +1,7 @@
 import 'package:dairy_farm_app/src/constants/colors.dart';
 import 'package:dairy_farm_app/src/constants/text.dart';
 import 'package:dairy_farm_app/src/features/dashboard/screens/profile/profile.dart';
+import 'package:dairy_farm_app/src/features/dashboard/screens/user_management/user_management.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,8 +39,9 @@ Future<dynamic> setting(BuildContext context, bool isDark) {
                 ),
                 ListTile(
                   onTap: () {
-                    Get.to(const Profile());
+                    
                     Navigator.pop(context);
+                    Get.to(const Profile());
                   },
                   leading: Icon(Icons.person,
                       color: isDark ? primaryColor : blackColor),
@@ -54,6 +56,11 @@ Future<dynamic> setting(BuildContext context, bool isDark) {
                   height: 10,
                 ),
                 ListTile(
+                  onTap: () {
+                    
+                    Navigator.pop(context);
+                    Get.to(const UserManagement());
+                  },
                   leading: Icon(Icons.person_search_sharp,
                       color: isDark ? primaryColor : blackColor),
                   title: Text(
