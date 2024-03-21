@@ -34,34 +34,14 @@ class Profile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Stack(
-              children: [
-                SizedBox(
-                  width: 120,
-                  height: 120,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100),
-                      child: Container(
-                          color: Colors.black12,
-                          child: Image.asset("assets/png/cow.png"))),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
+            SizedBox(
+              width: 120,
+              height: 120,
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(100),
                   child: Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: primaryColor),
-                    child: const Icon(
-                      LineIcons.alternatePencil,
-                      size: 18.0,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ],
+                      color: Colors.black12,
+                      child: Image.asset("assets/png/cow.png"))),
             ),
             const SizedBox(
               width: double.infinity,

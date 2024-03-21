@@ -1,3 +1,4 @@
+import 'package:dairy_farm_app/src/features/authentication/screens/login/login.dart';
 import 'package:dairy_farm_app/src/features/dashboard/screens/dashboard.dart';
 import 'package:dairy_farm_app/src/utils/theme.dart/theme.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,6 @@ class MyApp extends StatelessWidget {
         theme: FTheme.lightTheme,
         darkTheme: FTheme.darkTheme,
         themeMode: ThemeMode.system,
-        home: const Dashboard());
+        home: const Login());
   }
 }

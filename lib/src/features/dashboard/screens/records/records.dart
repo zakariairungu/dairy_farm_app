@@ -34,8 +34,9 @@ class Records extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: primaryColor.withOpacity(.3),
-                  border: Border.all(width: .5)),
+                
+                borderRadius: BorderRadius.circular(10),
+                  border: Border.all(width: 1)),
               child: ListView(
                 shrinkWrap: true,
                 children: const [
@@ -130,8 +131,24 @@ class Records extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(height: 10,),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                color: Colors.black,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text("Total"),
+                    Text("120L"),
+                  ],
+                  
+                ),
+              ),
+            )
             
           ],
+          
         ),
         Positioned(
           bottom: 0,
