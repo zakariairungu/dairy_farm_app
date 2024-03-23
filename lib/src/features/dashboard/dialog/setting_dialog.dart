@@ -1,5 +1,6 @@
 import 'package:dairy_farm_app/src/constants/colors.dart';
 import 'package:dairy_farm_app/src/constants/text.dart';
+import 'package:dairy_farm_app/src/features/dashboard/screens/animal_management/animal_management.dart';
 import 'package:dairy_farm_app/src/features/dashboard/screens/profile/profile.dart';
 import 'package:dairy_farm_app/src/features/dashboard/screens/user_management/user_management.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +66,22 @@ Future<dynamic> setting(BuildContext context, bool isDark) {
                       color: isDark ? primaryColor : blackColor),
                   title: Text(
                     fUserManagement,
+                    style: Theme.of(context).textTheme.titleSmall,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                ListTile(
+                  onTap: () {
+                    
+                    Navigator.pop(context);
+                    Get.to(const AnimalManagement());
+                  },
+                  leading: Icon(Icons.search,
+                      color: isDark ? primaryColor : blackColor),
+                  title: Text(
+                    "Animal Management",
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
                 ),

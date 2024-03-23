@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "949954747663",
+    "project_id": "cows-37f68",
+    "storage_bucket": "cows-37f68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949954747663:android:f40ccd193f58515ecc327a",
+        "android_client_info": {
+          "package_name": "com.example.dairy_farm_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlbM6H3k3g7famQaABeCou97IbITfwuT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
